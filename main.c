@@ -11,10 +11,18 @@ int	main(void)
 	fd = open(filename, O_RDWR);
 	if (fd < 0)
 		printf("Error");
-	//else
-	//{
-	//	printf("String: %s\n", get_next_line(fd));
-	//	printf("String: %s\n", get_next_line(fd));
-	//}
+	else
+	{
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+	}
 	return (0);
 }
