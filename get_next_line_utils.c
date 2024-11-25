@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/25 11:22:28 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/25 11:24:01 by skarras          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -17,6 +29,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (0);
 }
+
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*new_str;
@@ -32,7 +45,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (NULL);
 	new_str = (char *) malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!new_str)
-		return(NULL);
+		return (NULL);
 	i = -1;
 	if (s1)
 		while (s1[++i])
@@ -44,6 +57,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (new_str);
 }
+
 size_t	ft_strlen(const char *s)
 {
 	size_t	count;

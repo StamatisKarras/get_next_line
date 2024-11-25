@@ -9,7 +9,7 @@ SRC = get_next_line_utils.c \
 
 HEADER = get_next_line.h
 
-RM = rm -r
+RM = rm -f
 
 OBJ = $(SRC:.c=.o)
 
@@ -18,7 +18,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	echo "Program Compiled Succesfully"
 
 %.o: %.c $(HEADER)

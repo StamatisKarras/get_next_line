@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/25 11:20:30 by skarras           #+#    #+#             */
+/*   Updated: 2024/11/25 11:20:45 by skarras          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
 char	*update_storage(char *storage)
@@ -19,7 +31,7 @@ char	*update_storage(char *storage)
 		return (NULL);
 	i++; // If we don't ++ here we would be pointing to the new line character.
 	j = 0;
-	while(storage[i])
+	while (storage[i])
 		new_storage[j++] = storage[i++];
 	new_storage[j] = '\0';
 	free(storage);
@@ -86,7 +98,8 @@ char *get_next_line(int fd)
 	if(fd < 0 || BUFFER_SIZE < 1) // We use this check here because if fd(file descriptor) is < 0 then that mean there was no file read.
 								// The BUFFER_SIZE check is there to make sure that we can atleast read 1 byte at a time.
 		return (NULL);
-	buff_storage = file_read(fd, buff_storage); // We send the Buffer storage and the fd to the file_read function in order to get the text writen in a file and put it in buffer_storage.
+	buff_storage = file_read(fd, buff_storage); // We send the Buffer storage and the fd to the file_read function in order
+												// to get the text writen in the file pointed to by fd and put it in buffer_storage.
 	if (!buff_storage)
 		return (NULL);
 	line = extract_line(buff_storage); // Sending buff_storage to extract_line in order to extract only the first line from buff_storage.

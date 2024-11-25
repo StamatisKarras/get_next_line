@@ -23,6 +23,9 @@ int	main(void)
 		printf("String: %s\n", get_next_line(fd));
 		printf("String: %s\n", get_next_line(fd));
 		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
+		printf("String: %s\n", get_next_line(fd));
 	}
+	close(fd);
 	return (0);
 }
