@@ -6,6 +6,7 @@ int	main(void)
 {
 	char 	*filename;
 	int		fd;
+	char	*str;
 
 	filename = "file.txt";
 	fd = open(filename, O_RDWR);
@@ -13,18 +14,12 @@ int	main(void)
 		printf("Error");
 	else
 	{
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
-		printf("String: %s\n", get_next_line(fd));
+		str = get_next_line(fd);
+		while (str)
+		{
+			printf("%s", str);
+			str = get_next_line(fd);
+		}
 	}
 	close(fd);
 	return (0);
