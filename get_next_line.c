@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:20:30 by skarras           #+#    #+#             */
-/*   Updated: 2024/12/03 14:25:35 by skarras          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:41:13 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*file_read(int fd, char *storage)
 	bytes_read = 1;
 	while (!ft_strchr(storage, '\n') && bytes_read != 0) // This check is important to make sure that in consecutive calls we don't overwrite what is in buffer_storage.
 	{
-		bytes_read = read(fd, buff, 1);
+		bytes_read = read(fd, buff, 1); // Reads 1 byte from the file (fd) and puts it in buff.
 		if (bytes_read == -1) // If bytes_read is == to 1 then that means there was an error reading the file.
 		{
 			free(buff);
