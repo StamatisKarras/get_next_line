@@ -5,22 +5,34 @@
 int	main(void)
 {
 	char 	*filename;
+	char 	*filename2;
+	char 	*filename3;
 	int		fd;
-	char	*str;
+	int		fd2;
+	int		fd3;
 
 	filename = "file.txt";
+	filename2 = "file2.txt";
+	filename3 = "file3.txt";
 	fd = open(filename, O_RDWR);
-	if (fd < 0)
+	fd2 = open(filename2, O_RDONLY);
+	fd3 = open(filename3, O_RDONLY);
+	if (fd < 0 || fd2 < 0 || fd3 < 0)
 		printf("Error");
 	else
 	{
-		str = get_next_line(fd);
-		while (str)
-		{
-			printf("%s", str);
-			str = get_next_line(fd);
-		}
+		printf("%s\n", get_next_line(fd));
+		printf("%s\n", get_next_line(fd2));
+		printf("%s\n", get_next_line(fd3));
+		printf("%s\n", get_next_line(fd));
+		printf("%s\n", get_next_line(fd2));
+		printf("%s\n", get_next_line(fd3));
+		printf("%s\n", get_next_line(fd));
+		printf("%s\n", get_next_line(fd2));
+		printf("%s\n", get_next_line(fd3));
 	}
 	close(fd);
+	close(fd2);
+	close(fd3);
 	return (0);
 }
