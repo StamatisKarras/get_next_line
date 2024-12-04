@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:24:30 by skarras           #+#    #+#             */
-/*   Updated: 2024/11/25 11:26:41 by skarras          ###   ########.fr       */
+/*   Updated: 2024/12/04 12:47:22 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*update_storage(char *storage);
 //Defines:
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 42
 #endif
 
 #endif

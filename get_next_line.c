@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: skarras <skarras@student.42.fr>            +#+  +:+       +#+        */
+/*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:20:30 by skarras           #+#    #+#             */
-/*   Updated: 2024/12/03 14:41:13 by skarras          ###   ########.fr       */
+/*   Updated: 2024/12/04 12:12:09 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*update_storage(char *storage)
 		free(storage);
 		return (NULL);
 	}
-	new_storage = (char *) malloc((ft_strlen(storage) - i + 1) * sizeof(char)); // Because we don't want to copy he first line we allocate space for ft_strlen(storage) - firstline in storage.
+	new_storage = (char *) malloc((ft_strlen(storage) - i + 1) * sizeof(char)); // Because we don't want to copy the first line we allocate space for ft_strlen(storage) - firstline in storage.
 	if (!new_storage)
 		return (NULL);
 	i++; // If we don't ++ here we would be pointing to the new line character.
@@ -70,12 +70,14 @@ char	*file_read(int fd, char *storage)
 {
 	ssize_t	bytes_read;
 	char	*buff;
+	int		i;
 
+	i = 0;
 	buff = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr(storage, '\n') && bytes_read != 0) // This check is important to make sure that in consecutive calls we don't overwrite what is in buffer_storage.
+	while (!ft_strchr(storage, '\n') && bytes_read != 0 && i < BUFFER_SIZE) // This check is important to make sure that in consecutive calls we don't overwrite what is in buffer_storage.
 	{
 		bytes_read = read(fd, buff, 1); // Reads 1 byte from the file (fd) and puts it in buff.
 		if (bytes_read == -1) // If bytes_read is == to 1 then that means there was an error reading the file.
@@ -85,6 +87,7 @@ char	*file_read(int fd, char *storage)
 		}
 		buff[bytes_read] = '\0';
 		storage = ft_strjoin(storage, buff); // Simply sending the storage and buff to ft_strjoin which adds the string pointed to by buff at the end of storage.
+		i++;
 	}
 	free(buff);
 	return (storage);

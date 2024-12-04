@@ -21,16 +21,25 @@ int	main(void)
 		printf("Error");
 	else
 	{
-		printf("%s\n", get_next_line(fd));
-		printf("%s\n", get_next_line(fd2));
-		printf("%s\n", get_next_line(fd3));
-		printf("%s\n", get_next_line(fd));
-		printf("%s\n", get_next_line(fd2));
-		printf("%s\n", get_next_line(fd3));
-		printf("%s\n", get_next_line(fd));
-		printf("%s\n", get_next_line(fd2));
-		printf("%s\n", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
 	}
+	/*else
+	{
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+	}*/
 	close(fd);
 	close(fd2);
 	close(fd3);
