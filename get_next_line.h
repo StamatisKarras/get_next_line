@@ -33,7 +33,7 @@ char	*update_storage(char *storage);
 //Defines:
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 150
 #endif
 
 #endif

@@ -19,27 +19,27 @@ int	main(void)
 	fd3 = open(filename3, O_RDONLY);
 	if (fd < 0 || fd2 < 0 || fd3 < 0)
 		printf("Error");
-	else
-	{
-		printf("%s", get_next_line(fd));
-		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd3));
-		printf("%s", get_next_line(fd));
-		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd3));
-		printf("%s", get_next_line(fd));
-		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd3));
-	}
 	/*else
 	{
+		printf("%s", get_next_line(fd));
 		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
 		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
+		printf("%s", get_next_line(fd));
 		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd2));
-		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd3));
 	}*/
+	else
+	{
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+		printf("%s", get_next_line(fd2));
+	}
 	close(fd);
 	close(fd2);
 	close(fd3);

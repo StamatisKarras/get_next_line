@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 11:20:30 by skarras           #+#    #+#             */
-/*   Updated: 2024/12/04 12:12:09 by skarras          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:48:35 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ char	*file_read(int fd, char *storage)
 	if (!buff)
 		return (NULL);
 	bytes_read = 1;
-	while (!ft_strchr(storage, '\n') && bytes_read != 0 && i < BUFFER_SIZE) // This check is important to make sure that in consecutive calls we don't overwrite what is in buffer_storage.
+	while (!ft_strchr(storage, '\n') && bytes_read != 0) // This check is important to make sure that in consecutive calls we don't overwrite what is in buffer_storage.
 	{
-		bytes_read = read(fd, buff, 1); // Reads 1 byte from the file (fd) and puts it in buff.
+		bytes_read = read(fd, buff, BUFFER_SIZE); // Reads BUFFER_SIZE bytes from the file (fd) and puts it in buff. Thats because the subject asks to do as less reads as possible.
 		if (bytes_read == -1) // If bytes_read is == to 1 then that means there was an error reading the file.
 		{
 			free(buff);
